@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * This class extends class PreciousGems
  *
- * @author apple
+ * @author skakun
  */
 public class RealPreciousGems extends PreciousGems {
 
