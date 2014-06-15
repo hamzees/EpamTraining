@@ -11,7 +11,7 @@
        <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} [%-12.12t] &lt;%-5p&gt; &lt;%m&gt;%n"/>
      </layout>
 </appender>  
- <logger name="app6">
+ <logger name="logger">
             <level value="debug" />
       </logger>
       <root>
