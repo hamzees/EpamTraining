@@ -18,7 +18,7 @@ import org.apache.log4j.xml.DOMConfigurator;
  */
 public class Main {
     
-            public static final Logger log=Logger.getLogger(Main.class.getName()); 
+    public static final Logger log=Logger.getLogger(Main.class.getName()); 
 
     
     private static Necklace buildNecklace(GemsBaseBuilder builder) {
