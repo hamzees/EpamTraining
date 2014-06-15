@@ -1,5 +1,5 @@
 
-package by.epam.com.skakun.main;
+package by.epam.skakun.jewels.main;
 
 import by.epam.skakun.jewels.builder.ArtificialGemsBuilder;
 import by.epam.skakun.jewels.builder.GemsBaseBuilder;
