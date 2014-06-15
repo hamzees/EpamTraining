@@ -1,11 +1,11 @@
 
 package by.epam.skakun.jewels.main;
 
+import by.epam.skakun.jewels.necklace.Necklace;
 import by.epam.skakun.jewels.builder.ArtificialGemsBuilder;
 import by.epam.skakun.jewels.builder.GemsBaseBuilder;
 import by.epam.skakun.jewels.builder.RealPreciousGemsBuilder;
 import by.epam.skakun.jewels.builder.SemiPreciousGemsBuilder;
-import by.epam.com.skakun.necklace.Necklace;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;

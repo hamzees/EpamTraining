@@ -7,7 +7,7 @@ package by.epam.skakun.jewels.builder;
 
 import by.epam.skakun.jewels.entities.Gems;
 import by.epam.skakun.jewels.entities.SemiPreciousGems;
-import by.epam.com.skakun.necklace.Necklace;
+import by.epam.skakun.jewels.necklace.Necklace;
 import java.util.ArrayList;
 import org.apache.log4j.Logger;
 

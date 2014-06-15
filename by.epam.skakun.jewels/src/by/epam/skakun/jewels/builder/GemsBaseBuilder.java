@@ -1,6 +1,6 @@
 package by.epam.skakun.jewels.builder;
 
-import by.epam.com.skakun.necklace.Necklace;
+import by.epam.skakun.jewels.necklace.Necklace;
 
 /**
  * This is a basic class of the Builder pattern
