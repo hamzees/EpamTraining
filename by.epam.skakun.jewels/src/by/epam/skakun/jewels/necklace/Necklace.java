@@ -1,4 +1,4 @@
-package by.epam.com.skakun.necklace;
+package by.epam.skakun.jewels.necklace;
 
 import by.epam.skakun.jewels.entities.Gems;
 import java.util.ArrayList;
