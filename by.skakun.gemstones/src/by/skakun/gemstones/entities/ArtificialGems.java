@@ -3,7 +3,7 @@ package by.skakun.gemstones.entities;
 /**
  * This class extends class PreciousGems
  *
- * @author apple
+ * @author skakun
  */
 public class ArtificialGems extends PreciousGems {
 
