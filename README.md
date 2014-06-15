@@ -1,5 +1,6 @@
 EpamTraining
 ============
+<<<<<<< HEAD
 
  java epam training 2014
  Task1 - Jewels.
@@ -17,3 +18,5 @@ EpamTraining
  Для логирования использован логгер log4j (patternlayout для консоли и вывода
  в лог-файл). 
  Ввод пользовательских данных захардкожен.
+=======
+>>>>>>> FETCH_HEAD
