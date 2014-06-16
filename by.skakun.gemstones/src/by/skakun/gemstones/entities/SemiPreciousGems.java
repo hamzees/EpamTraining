@@ -50,7 +50,7 @@ public class SemiPreciousGems extends Gems {
             return false;
         }
         final SemiPreciousGems other = (SemiPreciousGems) obj;
-        if (this.symbol != other.symbol) {
+        if (!this.symbol.equals(other.symbol)) {
             return false;
         }
         return true;

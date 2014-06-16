@@ -71,7 +71,7 @@ public abstract class PreciousGems extends Gems {
             return false;
         }
         final PreciousGems other = (PreciousGems) obj;
-        if (this.cutMethod != other.getCutMethod()) {
+        if (!this.cutMethod.equals(other.getCutMethod())) {
             return false;
         }
         if (this.toughness != other.toughness) {

@@ -54,7 +54,7 @@ public class RealPreciousGems extends PreciousGems {
             return false;
         }
         final RealPreciousGems other = (RealPreciousGems) obj;
-        if (this.fieldOrigin != other.fieldOrigin) {
+        if (!this.fieldOrigin.equals(other.fieldOrigin)) {
             return false;
         }
         return true;

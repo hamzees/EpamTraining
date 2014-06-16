@@ -58,10 +58,10 @@ public abstract class Gems {
         if (this.opacity != other.opacity) {
             return false;
         }
-        if (this.color != other.color) {
+        if (!this.color.equals(other.color)) {
             return false;
         }
-        if (this.name != other.name) {
+        if (!this.name.equals(other.name)) {
             return false;
         }
         return true;
