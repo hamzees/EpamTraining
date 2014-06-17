@@ -40,37 +40,37 @@ public class Main {
         LOG.info("Общий вес ожерелья: " + necklaceRPG.totalWeight());
         
         necklaceRPG.sortGemstonesByCost();
-        log.info("Отсортировано по стоимости камней: \n" + necklaceRPG.getGems());
+        LOG.info("Отсортировано по стоимости камней: \n" + necklaceRPG.getGems());
         
-        log.info("Заданным условиям прозрачности в ожерелье "
+        LOG.info("Заданным условиям прозрачности в ожерелье "
                 + "отвечают следующие камни: \n" + necklaceRPG.collectByOpacity(2, 4));
         
         Necklace necklaceSPG = buildNecklace(new SemiPreciousGemsBuilder());
-        log.info(necklaceSPG.getType());
-        log.info("Состав ожерелья" + necklaceSPG.getGems());
-        log.info("Общая стоимость ожерелья: " + necklaceSPG.totalCost());
-        log.info("Общий вес ожерелья: " + necklaceSPG.totalWeight());
+        LOG.info(necklaceSPG.getType());
+        LOG.info("Состав ожерелья" + necklaceSPG.getGems());
+        LOG.info("Общая стоимость ожерелья: " + necklaceSPG.totalCost());
+        LOG.info("Общий вес ожерелья: " + necklaceSPG.totalWeight());
         
         necklaceRPG.sortGemstonesByCost();
-        log.info("Отсортировано по стоимости камней: \n" + necklaceSPG.getGems());
+        LOG.info("Отсортировано по стоимости камней: \n" + necklaceSPG.getGems());
         
         try {
-            log.info("Заданным условиям прозрачности в ожерелье "
+            LOG.info("Заданным условиям прозрачности в ожерелье "
                     + "отвечают следующие камни: \n" + necklaceSPG.collectByOpacity(1, 3));
         } catch (NumberFormatException ex) {
-            log.debug("Неправильно введены границы прозрачности" + ex);
+            LOG.debug("Неправильно введены границы прозрачности" + ex);
         }
         
         Necklace necklaceAPG = buildNecklace(new ArtificialGemsBuilder());
-        log.info(necklaceAPG.getType());
-        log.info("Состав ожерелья" + necklaceAPG.getGems());
-        log.info("Общая стоимость ожерелья: " + necklaceAPG.totalCost());
-        log.info("Общий вес ожерелья: " + necklaceAPG.totalWeight());
+        LOG.info(necklaceAPG.getType());
+        LOG.info("Состав ожерелья" + necklaceAPG.getGems());
+        LOG.info("Общая стоимость ожерелья: " + necklaceAPG.totalCost());
+        LOG.info("Общий вес ожерелья: " + necklaceAPG.totalWeight());
         
         necklaceRPG.sortGemstonesByCost();
-        log.info("Отсортировано по стоимости камней: \n" + necklaceAPG.getGems());
+        LOG.info("Отсортировано по стоимости камней: \n" + necklaceAPG.getGems());
         
-        log.info("Заданным условиям прозрачности в ожерелье "
+        LOG.info("Заданным условиям прозрачности в ожерелье "
                 + "отвечают следующие камни: \n" + necklaceAPG.collectByOpacity(2, 4));
     }
     
