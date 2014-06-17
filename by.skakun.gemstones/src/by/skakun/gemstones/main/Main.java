@@ -18,7 +18,7 @@ import org.apache.log4j.xml.DOMConfigurator;
  */
 public class Main {
     
-            public static final Logger log=Logger.getLogger(Main.class.getName()); 
+            public static final Logger LOG=Logger.getLogger(Main.class.getName()); 
 
     
     private static Necklace buildNecklace(GemsBaseBuilder builder) {
@@ -34,10 +34,10 @@ public class Main {
     new DOMConfigurator().doConfigure("log4j.xml", LogManager.getLoggerRepository());
 
         Necklace necklaceRPG = buildNecklace(new RealPreciousGemsBuilder());
-        log.info(necklaceRPG.getType());
-        log.info("Состав ожерелья" + necklaceRPG.getGems());
-        log.info("Общая стоимость ожерелья: " + necklaceRPG.totalCost());
-        log.info("Общий вес ожерелья: " + necklaceRPG.totalWeight());
+        LOG.info(necklaceRPG.getType());
+        LOG.info("Состав ожерелья" + necklaceRPG.getGems());
+        LOG.info("Общая стоимость ожерелья: " + necklaceRPG.totalCost());
+        LOG.info("Общий вес ожерелья: " + necklaceRPG.totalWeight());
         
         necklaceRPG.sortGemstonesByCost();
         log.info("Отсортировано по стоимости камней: \n" + necklaceRPG.getGems());
