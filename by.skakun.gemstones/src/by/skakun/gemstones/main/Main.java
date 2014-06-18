@@ -17,8 +17,11 @@ import org.apache.log4j.xml.DOMConfigurator;
 public class Main {
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     public static final Logger LOG = Logger.getLogger(Main.class.getName());
 =======
+=======
+>>>>>>> FETCH_HEAD
             public static final Logger LOG=Logger.getLogger(Main.class.getName()); 
 
 >>>>>>> FETCH_HEAD
