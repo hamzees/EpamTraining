@@ -1,16 +1,20 @@
 package by.skakun.gemstones.entities;
 
+import org.apache.log4j.Logger;
+
 /**
- * This is the basic class for the gemstones hierarchy. 
+ * This is the basic class for the gemstones hierarchy.
+ *
  * @author skakun
  */
-public abstract class Gems {
+public abstract class Gem {
 
     private int cost;
-    private int weight;
+    private double weight;
     private int opacity;
     private String color;
     private String name;
+    private static final Logger LOG = Logger.getLogger(Gem.class);
 
     /**
      *
@@ -20,7 +24,7 @@ public abstract class Gems {
      * @param color
      * @param name
      */
-    public Gems(int cost, int weight, int opacity, String color, String name) {
+    public Gem(int cost, double weight, int opacity, String color, String name) {
         this.cost = cost;
         this.weight = weight;
         this.opacity = opacity;
@@ -31,7 +35,7 @@ public abstract class Gems {
     /**
      * Default constructor.
      */
-    public Gems() {
+    public Gem() {
     }
 
     @Override
@@ -48,7 +52,7 @@ public abstract class Gems {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Gems other = (Gems) obj;
+        final Gem other = (Gem) obj;
         if (this.cost != other.cost) {
             return false;
         }
@@ -71,7 +75,7 @@ public abstract class Gems {
     public int hashCode() {
         int hash = 7;
         hash = 97 * hash + this.cost;
-        hash = 97 * hash + this.weight;
+        hash = (int) (97 * hash + this.weight);
         hash = 97 * hash + this.opacity;
         return hash;
     }
@@ -101,7 +105,11 @@ public abstract class Gems {
      * @param name sets name
      */
     public void setName(String name) {
-        this.name = name;
+        if (name != null) {
+            this.name = name;
+        } else {
+            LOG.warn("Название камня не должно быть пустым.");
+        }
     }
 
     /**
@@ -110,13 +118,14 @@ public abstract class Gems {
      */
     public int getCost() {
         return cost;
+
     }
 
     /**
      *
      * @return weight returns gem's weight
      */
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
@@ -125,7 +134,11 @@ public abstract class Gems {
      * @param cost sets gem's cost
      */
     public void setCost(int cost) {
-        this.cost = cost;
+        if (cost > 0) {
+            this.cost = cost;
+        } else {
+            LOG.warn("Цена камня должна быть больше нуля.");
+        }
     }
 
     /**
@@ -133,7 +146,11 @@ public abstract class Gems {
      * @param weight sets gem's weight
      */
     public void setWeight(int weight) {
-        this.weight = weight;
+        if (weight > 0) {
+            this.weight = weight;
+        } else {
+            LOG.warn("Вес камня должен быть больше нуля.");
+        }
     }
 
     /**
@@ -149,6 +166,10 @@ public abstract class Gems {
      * @param opacity
      */
     public void setOpacity(int opacity) {
-        this.opacity = opacity;
+        if (opacity > 0) {
+            this.opacity = opacity;
+        } else {
+            LOG.warn("Прозрачность камня должна быть больше нуля.");
+        }
     }
 }

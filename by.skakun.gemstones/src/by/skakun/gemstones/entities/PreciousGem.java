@@ -1,16 +1,18 @@
 package by.skakun.gemstones.entities;
 
 import java.util.Objects;
+import org.apache.log4j.Logger;
 
 /**
- * This class extends basic class Gems
+ * This class extends basic class Gem
  *
  * @author skakun
  */
-public abstract class PreciousGems extends Gems {
+public abstract class PreciousGem extends Gem {
 
     private int toughness;
     private String cutMethod;
+    private static final Logger LOG = Logger.getLogger(PreciousGem.class);
 
     /**
      *
@@ -22,7 +24,7 @@ public abstract class PreciousGems extends Gems {
      * @param color
      * @param name
      */
-    public PreciousGems(int toughness, String cutMethod, int cost, int weight, int opacity, String color, String name) {
+    public PreciousGem(int toughness, String cutMethod, int cost, int weight, int opacity, String color, String name) {
         super(cost, weight, opacity, color, name);
         this.toughness = toughness;
         this.cutMethod = cutMethod;
@@ -41,7 +43,11 @@ public abstract class PreciousGems extends Gems {
      * @param toughness sets precious gem's toughness
      */
     public void setToughness(int toughness) {
-        this.toughness = toughness;
+        if (toughness > 0) {
+            this.toughness = toughness;
+        } else {
+            LOG.warn("Твердость камня должна быть больше 0.");
+        }
     }
 
     /**
@@ -57,7 +63,11 @@ public abstract class PreciousGems extends Gems {
      * @param cutMethod sets precious gem's cut method
      */
     public void setCutMethod(String cutMethod) {
-        this.cutMethod = cutMethod;
+        if (cutMethod != null) {
+            this.cutMethod = cutMethod;
+        } else {
+            LOG.warn("Способ огранки камня должен быть определен.");
+        }
     }
 
     @Override
@@ -70,7 +80,7 @@ public abstract class PreciousGems extends Gems {
         if (!super.equals(obj)) {
             return false;
         }
-        final PreciousGems other = (PreciousGems) obj;
+        final PreciousGem other = (PreciousGem) obj;
         if (!this.cutMethod.equals(other.getCutMethod())) {
             return false;
         }

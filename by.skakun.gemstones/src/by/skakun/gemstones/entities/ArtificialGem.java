@@ -1,13 +1,16 @@
 package by.skakun.gemstones.entities;
 
+import org.apache.log4j.Logger;
+
 /**
- * This class extends class PreciousGems
+ * This class extends class PreciousGem
  *
  * @author skakun
  */
-public class ArtificialGems extends PreciousGems {
+public class ArtificialGem extends PreciousGem {
 
     private int age;
+    private static final Logger LOG = Logger.getLogger(ArtificialGem.class);
 
     /**
      *
@@ -20,7 +23,7 @@ public class ArtificialGems extends PreciousGems {
      * @param color
      * @param name
      */
-    public ArtificialGems(int age, int toughness, String cutMethod, int cost, int weight, int opacity, String color, String name) {
+    public ArtificialGem(int age, int toughness, String cutMethod, int cost, int weight, int opacity, String color, String name) {
         super(toughness, cutMethod, cost, weight, opacity, color, name);
         this.age = age;
     }
@@ -38,7 +41,11 @@ public class ArtificialGems extends PreciousGems {
      * @param age sets artificial gem's age
      */
     public void setAge(int age) {
-        this.age = age;
+        if(age>0){
+        this.age = age;}
+        else{
+          LOG.warn("Возраст камня должен быть больше нуля.");
+        }
     }
 
     @Override
@@ -51,7 +58,7 @@ public class ArtificialGems extends PreciousGems {
         if (!super.equals(obj)) {
             return false;
         }
-        final ArtificialGems other = (ArtificialGems) obj;
+        final ArtificialGem other = (ArtificialGem) obj;
         if (this.age != other.age) {
             return false;
         }

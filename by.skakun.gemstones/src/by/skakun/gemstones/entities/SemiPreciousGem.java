@@ -1,14 +1,16 @@
 package by.skakun.gemstones.entities;
 
 import java.util.Objects;
+import org.apache.log4j.Logger;
 
 /**
- * This class extends basic class Gems
+ * This class extends basic class Gem
  *
  * @author skakun
  */
-public class SemiPreciousGems extends Gems {
+public class SemiPreciousGem extends Gem {
 
+    public static final Logger LOG = Logger.getLogger(SemiPreciousGem.class.getName());
     private String symbol;
 
     /**
@@ -20,7 +22,7 @@ public class SemiPreciousGems extends Gems {
      * @param color
      * @param name
      */
-    public SemiPreciousGems(String symbol, int cost, int weight, int opacity, String color, String name) {
+    public SemiPreciousGem(String symbol, int cost, int weight, int opacity, String color, String name) {
         super(cost, weight, opacity, color, name);
         this.symbol = symbol;
     }
@@ -36,7 +38,11 @@ public class SemiPreciousGems extends Gems {
      * @param symbol the symbol to set
      */
     public void setSymbol(String symbol) {
-        this.symbol = symbol;
+        if (symbol != null) {
+            this.symbol = symbol;
+        } else {
+            LOG.warn("Символ камня не может быть пустым.");
+        }
     }
 
     @Override
@@ -49,7 +55,7 @@ public class SemiPreciousGems extends Gems {
         if (!super.equals(obj)) {
             return false;
         }
-        final SemiPreciousGems other = (SemiPreciousGems) obj;
+        final SemiPreciousGem other = (SemiPreciousGem) obj;
         if (!this.symbol.equals(other.symbol)) {
             return false;
         }

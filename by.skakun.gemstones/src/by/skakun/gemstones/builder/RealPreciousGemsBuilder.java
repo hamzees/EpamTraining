@@ -1,7 +1,7 @@
 package by.skakun.gemstones.builder;
 
-import by.skakun.gemstones.entities.Gems;
-import by.skakun.gemstones.entities.RealPreciousGems;
+import by.skakun.gemstones.entities.Gem;
+import by.skakun.gemstones.entities.RealPreciousGem;
 import by.skakun.gemstones.necklace.Necklace;
 import java.util.ArrayList;
 import org.apache.log4j.Logger;
@@ -14,13 +14,13 @@ import org.apache.log4j.Logger;
  */
 public class RealPreciousGemsBuilder extends GemsBaseBuilder {
 
-    private static final Logger log = Logger.getLogger(RealPreciousGemsBuilder.class.getName());
+    private static final Logger LOG = Logger.getLogger(RealPreciousGemsBuilder.class.getName());
 
     /**
      * constructor without parameters
      */
     public RealPreciousGemsBuilder() {
-        log.info("\nНОВОЕ ОЖЕРЕЛЬЕ");
+        LOG.info("\nНОВОЕ ОЖЕРЕЛЬЕ");
     }
 
     @Override
@@ -30,11 +30,11 @@ public class RealPreciousGemsBuilder extends GemsBaseBuilder {
 
     @Override
     public void buildGems() {
-        log.trace("Отбираем камни для ожерелья");
-        ArrayList<Gems> rpGems = new ArrayList<Gems>();
-        rpGems.add(new RealPreciousGems("Германия", 5, "Круглая", 500, 2, 1, "Розовый", "Бриллиант"));
-        rpGems.add(new RealPreciousGems("Италия", 4, "Ступенчатай", 400, 2, 3, "Синий", "Сапфир"));
-        rpGems.add(new RealPreciousGems("Россия", 4, "Капельная", 300, 2, 5, "Красный", "Рубин"));
+        LOG.trace("Отбираем камни для ожерелья");
+        ArrayList<Gem> rpGems = new ArrayList<Gem>();
+        rpGems.add(new RealPreciousGem("Германия", 5, "Круглая", 500, 2, 1, "Розовый", "Бриллиант"));
+        rpGems.add(new RealPreciousGem("Италия", 4, "Ступенчатай", 400, 2, 3, "Синий", "Сапфир"));
+        rpGems.add(new RealPreciousGem("Россия", 4, "Капельная", 300, 2, 5, "Красный", "Рубин"));
         getNecklace().setGems(rpGems);
     }
 

@@ -5,8 +5,8 @@
  */
 package by.skakun.gemstones.builder;
 
-import by.skakun.gemstones.entities.Gems;
-import by.skakun.gemstones.entities.SemiPreciousGems;
+import by.skakun.gemstones.entities.Gem;
+import by.skakun.gemstones.entities.SemiPreciousGem;
 import by.skakun.gemstones.necklace.Necklace;
 import java.util.ArrayList;
 import org.apache.log4j.Logger;
@@ -19,13 +19,13 @@ import org.apache.log4j.Logger;
  */
 public class SemiPreciousGemsBuilder extends GemsBaseBuilder {
 
-    private static final Logger log = Logger.getLogger(SemiPreciousGemsBuilder.class);
+    private static final Logger LOG = Logger.getLogger(SemiPreciousGemsBuilder.class);
 
     /**
      * constructor without parameters
      */
     public SemiPreciousGemsBuilder() {
-        log.info("\nНОВОЕ ОЖЕРЕЛЬЕ");
+        LOG.info("\nНОВОЕ ОЖЕРЕЛЬЕ");
     }
 
     @Override
@@ -35,11 +35,11 @@ public class SemiPreciousGemsBuilder extends GemsBaseBuilder {
 
     @Override
     public void buildGems() {
-        log.trace("Отбираем камни для ожерелья");
-        ArrayList<Gems> rpGems = new ArrayList<Gems>();
-        rpGems.add(new SemiPreciousGems("Здоровье", 1500, 6, 1, "Розовый", "Агат"));
-        rpGems.add(new SemiPreciousGems("Мудрость", 1400, 4, 3, "Синий", "Опал"));
-        rpGems.add(new SemiPreciousGems("Лаконичность", 1300, 2, 5, "Фиолетовый", "Аметист"));
+        LOG.trace("Отбираем камни для ожерелья");
+        ArrayList<Gem> rpGems = new ArrayList<Gem>();
+        rpGems.add(new SemiPreciousGem("Здоровье", 1500, 6, 1, "Розовый", "Агат"));
+        rpGems.add(new SemiPreciousGem("Мудрость", 1400, 4, 3, "Синий", "Опал"));
+        rpGems.add(new SemiPreciousGem("Лаконичность", 1300, 2, 5, "Фиолетовый", "Аметист"));
         getNecklace().setGems(rpGems);
     }
 
