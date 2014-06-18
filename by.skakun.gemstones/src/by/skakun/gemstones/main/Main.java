@@ -1,16 +1,14 @@
-
 package by.skakun.gemstones.main;
 
-import by.skakun.gemstones.necklace.Necklace;
 import by.skakun.gemstones.builder.ArtificialGemsBuilder;
 import by.skakun.gemstones.builder.GemsBaseBuilder;
 import by.skakun.gemstones.builder.RealPreciousGemsBuilder;
 import by.skakun.gemstones.builder.SemiPreciousGemsBuilder;
+import by.skakun.gemstones.necklace.Necklace;
+import by.skakun.gemstones.necklace.NecklaceAssemble;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 import org.apache.log4j.xml.DOMConfigurator;
-
 
 /**
  *
@@ -18,8 +16,12 @@ import org.apache.log4j.xml.DOMConfigurator;
  */
 public class Main {
     
-            public static final Logger log=Logger.getLogger(Main.class.getName()); 
+<<<<<<< HEAD
+    public static final Logger LOG = Logger.getLogger(Main.class.getName());
+=======
+            public static final Logger LOG=Logger.getLogger(Main.class.getName()); 
 
+>>>>>>> FETCH_HEAD
     
     private static Necklace buildNecklace(GemsBaseBuilder builder) {
         builder.buildType();
@@ -31,47 +33,61 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+<<<<<<< HEAD
+        new DOMConfigurator().doConfigure("log4j.xml", LogManager.getLoggerRepository());
+        
+        Necklace necklaceRPG = buildNecklace(new RealPreciousGemsBuilder());
+        NecklaceAssemble.assembleInformation(necklaceRPG);
+        
+        Necklace necklaceSPG = buildNecklace(new SemiPreciousGemsBuilder());
+        NecklaceAssemble.assembleInformation(necklaceSPG);
+        
+        Necklace necklaceAPG = buildNecklace(new ArtificialGemsBuilder());
+        NecklaceAssemble.assembleInformation(necklaceAPG);
+        
+=======
     new DOMConfigurator().doConfigure("log4j.xml", LogManager.getLoggerRepository());
 
         Necklace necklaceRPG = buildNecklace(new RealPreciousGemsBuilder());
-        log.info(necklaceRPG.getType());
-        log.info("Состав ожерелья" + necklaceRPG.getGems());
-        log.info("Общая стоимость ожерелья: " + necklaceRPG.totalCost());
-        log.info("Общий вес ожерелья: " + necklaceRPG.totalWeight());
+        LOG.info(necklaceRPG.getType());
+        LOG.info("Состав ожерелья" + necklaceRPG.getGems());
+        LOG.info("Общая стоимость ожерелья: " + necklaceRPG.totalCost());
+        LOG.info("Общий вес ожерелья: " + necklaceRPG.totalWeight());
         
         necklaceRPG.sortGemstonesByCost();
-        log.info("Отсортировано по стоимости камней: \n" + necklaceRPG.getGems());
+        LOG.info("Отсортировано по стоимости камней: \n" + necklaceRPG.getGems());
         
-        log.info("Заданным условиям прозрачности в ожерелье "
+        LOG.info("Заданным условиям прозрачности в ожерелье "
                 + "отвечают следующие камни: \n" + necklaceRPG.collectByOpacity(2, 4));
         
         Necklace necklaceSPG = buildNecklace(new SemiPreciousGemsBuilder());
-        log.info(necklaceSPG.getType());
-        log.info("Состав ожерелья" + necklaceSPG.getGems());
-        log.info("Общая стоимость ожерелья: " + necklaceSPG.totalCost());
-        log.info("Общий вес ожерелья: " + necklaceSPG.totalWeight());
+        LOG.info(necklaceSPG.getType());
+        LOG.info("Состав ожерелья" + necklaceSPG.getGems());
+        LOG.info("Общая стоимость ожерелья: " + necklaceSPG.totalCost());
+        LOG.info("Общий вес ожерелья: " + necklaceSPG.totalWeight());
         
         necklaceRPG.sortGemstonesByCost();
-        log.info("Отсортировано по стоимости камней: \n" + necklaceSPG.getGems());
+        LOG.info("Отсортировано по стоимости камней: \n" + necklaceSPG.getGems());
         
         try {
-            log.info("Заданным условиям прозрачности в ожерелье "
+            LOG.info("Заданным условиям прозрачности в ожерелье "
                     + "отвечают следующие камни: \n" + necklaceSPG.collectByOpacity(1, 3));
         } catch (NumberFormatException ex) {
-            log.debug("Неправильно введены границы прозрачности" + ex);
+            LOG.debug("Неправильно введены границы прозрачности" + ex);
         }
         
         Necklace necklaceAPG = buildNecklace(new ArtificialGemsBuilder());
-        log.info(necklaceAPG.getType());
-        log.info("Состав ожерелья" + necklaceAPG.getGems());
-        log.info("Общая стоимость ожерелья: " + necklaceAPG.totalCost());
-        log.info("Общий вес ожерелья: " + necklaceAPG.totalWeight());
+        LOG.info(necklaceAPG.getType());
+        LOG.info("Состав ожерелья" + necklaceAPG.getGems());
+        LOG.info("Общая стоимость ожерелья: " + necklaceAPG.totalCost());
+        LOG.info("Общий вес ожерелья: " + necklaceAPG.totalWeight());
         
         necklaceRPG.sortGemstonesByCost();
-        log.info("Отсортировано по стоимости камней: \n" + necklaceAPG.getGems());
+        LOG.info("Отсортировано по стоимости камней: \n" + necklaceAPG.getGems());
         
-        log.info("Заданным условиям прозрачности в ожерелье "
+        LOG.info("Заданным условиям прозрачности в ожерелье "
                 + "отвечают следующие камни: \n" + necklaceAPG.collectByOpacity(2, 4));
+>>>>>>> FETCH_HEAD
     }
     
 }
