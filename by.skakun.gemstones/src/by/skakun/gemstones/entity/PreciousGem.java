@@ -1,5 +1,6 @@
-package by.skakun.gemstones.entities;
+package by.skakun.gemstones.entity;
 
+import by.skakun.gemstones.exception.GemLogicException;
 import java.util.Objects;
 import org.apache.log4j.Logger;
 
@@ -23,11 +24,20 @@ public abstract class PreciousGem extends Gem {
      * @param opacity
      * @param color
      * @param name
+     * @throws by.skakun.gemstones.exception.GemLogicException
      */
-    public PreciousGem(int toughness, String cutMethod, int cost, int weight, int opacity, String color, String name) {
+    public PreciousGem(int toughness, String cutMethod, int cost, int weight, int opacity, String color, String name) throws GemLogicException {
         super(cost, weight, opacity, color, name);
-        this.toughness = toughness;
-        this.cutMethod = cutMethod;
+        if (toughness <= 0) {
+            throw new GemLogicException("Неправильно указана прочность камня");
+        } else {
+            this.toughness = toughness;
+        }
+        if (cutMethod.isEmpty()) {
+            throw new GemLogicException("Неправильно указан метод огранки");
+        } else {
+            this.cutMethod = cutMethod;
+        }
     }
 
     /**
@@ -41,12 +51,13 @@ public abstract class PreciousGem extends Gem {
     /**
      *
      * @param toughness sets precious gem's toughness
+     * @throws by.skakun.gemstones.exception.GemLogicException
      */
-    public void setToughness(int toughness) {
-        if (toughness > 0) {
-            this.toughness = toughness;
+    public void setToughness(int toughness) throws GemLogicException {
+        if (toughness <= 0) {
+            throw new GemLogicException("Твердость камня должна быть больше 0.");
         } else {
-            LOG.warn("Твердость камня должна быть больше 0.");
+            this.toughness = toughness;
         }
     }
 
@@ -61,12 +72,13 @@ public abstract class PreciousGem extends Gem {
     /**
      *
      * @param cutMethod sets precious gem's cut method
+     * @throws by.skakun.gemstones.exception.GemLogicException
      */
-    public void setCutMethod(String cutMethod) {
-        if (cutMethod != null) {
-            this.cutMethod = cutMethod;
+    public void setCutMethod(String cutMethod) throws GemLogicException {
+        if (cutMethod.isEmpty()) {
+            throw new GemLogicException("Способ огранки камня должен быть определен.");
         } else {
-            LOG.warn("Способ огранки камня должен быть определен.");
+            this.cutMethod = cutMethod;
         }
     }
 

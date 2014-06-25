@@ -1,5 +1,6 @@
-package by.skakun.gemstones.entities;
+package by.skakun.gemstones.entity;
 
+import by.skakun.gemstones.exception.GemLogicException;
 import java.util.Objects;
 import org.apache.log4j.Logger;
 
@@ -23,10 +24,15 @@ public class RealPreciousGem extends PreciousGem {
      * @param opacity
      * @param color
      * @param name
+     * @throws by.skakun.gemstones.exception.GemLogicException
      */
-    public RealPreciousGem(String fieldOrigin, int toughness, String cutMethod, int cost, int weight, int opacity, String color, String name) {
+    public RealPreciousGem(String fieldOrigin, int toughness, String cutMethod, int cost, int weight, int opacity, String color, String name) throws GemLogicException {
         super(toughness, cutMethod, cost, weight, opacity, color, name);
-        this.fieldOrigin = fieldOrigin;
+        if (fieldOrigin.isEmpty()) {
+            throw new GemLogicException("Страна происхождения камня должна быть определена.");
+        } else {
+            this.fieldOrigin = fieldOrigin;
+        }
     }
 
     /**
@@ -40,12 +46,13 @@ public class RealPreciousGem extends PreciousGem {
     /**
      *
      * @param fieldOrigin sets gem's field of origin
+     * @throws by.skakun.gemstones.exception.GemLogicException
      */
-    public void setFieldOrigin(String fieldOrigin) {
-        if (fieldOrigin != null) {
-            this.fieldOrigin = fieldOrigin;
+    public void setFieldOrigin(String fieldOrigin) throws GemLogicException {
+        if (fieldOrigin.isEmpty()) {
+            throw new GemLogicException("Страна происхождения камня должна быть определена.");
         } else {
-            LOG.warn("Страна происхождения камня должна быть определена.");
+            this.fieldOrigin = fieldOrigin;
         }
     }
 

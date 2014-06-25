@@ -1,5 +1,6 @@
-package by.skakun.gemstones.entities;
+package by.skakun.gemstones.entity;
 
+import by.skakun.gemstones.exception.GemLogicException;
 import org.apache.log4j.Logger;
 
 /**
@@ -22,10 +23,15 @@ public class ArtificialGem extends PreciousGem {
      * @param opacity
      * @param color
      * @param name
+     * @throws by.skakun.gemstones.exception.GemLogicException
      */
-    public ArtificialGem(int age, int toughness, String cutMethod, int cost, int weight, int opacity, String color, String name) {
+    public ArtificialGem(int age, int toughness, String cutMethod, int cost, int weight, int opacity, String color, String name) throws GemLogicException {
         super(toughness, cutMethod, cost, weight, opacity, color, name);
-        this.age = age;
+        if (age <= 0) {
+            throw new GemLogicException("Возраст камня не может быть меньше нуля");
+        } else {
+            this.age = age;
+        }
     }
 
     /**
@@ -39,12 +45,13 @@ public class ArtificialGem extends PreciousGem {
     /**
      *
      * @param age sets artificial gem's age
+     * @throws by.skakun.gemstones.exception.GemLogicException
      */
-    public void setAge(int age) {
-        if(age>0){
-        this.age = age;}
-        else{
-          LOG.warn("Возраст камня должен быть больше нуля.");
+    public void setAge(int age) throws GemLogicException {
+        if (age <= 0) {
+            throw new GemLogicException("Возраст камня должен быть больше нуля");
+        } else {
+            this.age = age;
         }
     }
 

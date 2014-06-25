@@ -3,12 +3,12 @@
 <appender name="TxtAppender" class="org.apache.log4j.FileAppender">
            <param name="File" value="log.txt" />
 <layout class="org.apache.log4j.PatternLayout">
-       <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} [%-12.12t] &lt;%-5p&gt; &lt;%m&gt;%n"/>
+       <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} [%-12.12t] &lt;%-2p&gt; &lt;%m&gt;%n"/>
      </layout> 
 </appender>
 <appender name="ConsAppender" class="org.apache.log4j.ConsoleAppender">
 <layout class="org.apache.log4j.PatternLayout">
-       <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} [%-12.12t] &lt;%-5p&gt; &lt;%m&gt;%n"/>
+       <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} [%-1.12t] &lt;%-2p&gt;\n &lt;%m&gt;%n"/>
      </layout>
 </appender>  
  <logger name="logger">

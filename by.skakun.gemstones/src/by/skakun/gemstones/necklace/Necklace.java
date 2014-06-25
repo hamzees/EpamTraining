@@ -1,18 +1,17 @@
 package by.skakun.gemstones.necklace;
 
-import by.skakun.gemstones.entities.Gem;
+import by.skakun.gemstones.entity.Gem;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.apache.log4j.Logger;
 
 /**
  * This class creates a necklace, which may consist of different types of gems
- * Provides methods for sorting gems in a necklace, counting total weight and
+ * Provides methods for counting total weight and
  * total cost of it.
  *
  * @author skakun
  */
-public class Necklace {
+public class Necklace implements Cloneable {
 
     private String type;
     private ArrayList<Gem> gems;
@@ -23,7 +22,8 @@ public class Necklace {
      * @return gems returns the gems for the necklace
      */
     public ArrayList<Gem> getGems() {
-        return gems;
+        Necklace nLaceCopy = clone();
+        return nLaceCopy.gems;
     }
 
     /**
@@ -49,18 +49,17 @@ public class Necklace {
     public void setGems(ArrayList<Gem> gems) {
         this.gems = gems;
     }
-    
+
     /**
      *
      * @return Returns the total weight of the necklace
      */
-    public double totalWeight() {
+    public double calculateTotalWeight() {
         LOG.info("Вычисляем общий вес ожерелья.");
         double weight = 0;
         for (Gem g : gems) {
             weight += g.getWeight();
         }
-
         return weight;
     }
 
@@ -68,13 +67,25 @@ public class Necklace {
      *
      * @return Returns the total cost of the necklace
      */
-    public int totalCost() {
+    public int calculateTotalCost() {
         LOG.info("Вычисляем общую стоимость ожерелья.");
         int cost = 0;
-        for (Gem g : gems) {
-            cost += g.getCost();
-        }
+        cost = gems.stream().map((g) -> g.getCost()).reduce(cost, Integer::sum);
         return cost;
+
+    }
+
+    @Override
+    public Necklace clone() {
+        Necklace nLaceCopy = null;
+        try {
+            nLaceCopy = (Necklace) super.clone();
+            nLaceCopy.gems = (ArrayList<Gem>) gems.clone();
+            return nLaceCopy;
+        } catch (CloneNotSupportedException ex) {
+            LOG.warn("Не получилось создать копию объекта" + ex);
+            return nLaceCopy;
+        }
     }
 
 }

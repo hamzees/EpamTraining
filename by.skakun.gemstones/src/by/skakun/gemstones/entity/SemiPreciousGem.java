@@ -1,5 +1,6 @@
-package by.skakun.gemstones.entities;
+package by.skakun.gemstones.entity;
 
+import by.skakun.gemstones.exception.GemLogicException;
 import java.util.Objects;
 import org.apache.log4j.Logger;
 
@@ -21,10 +22,15 @@ public class SemiPreciousGem extends Gem {
      * @param opacity
      * @param color
      * @param name
+     * @throws by.skakun.gemstones.exception.GemLogicException
      */
-    public SemiPreciousGem(String symbol, int cost, int weight, int opacity, String color, String name) {
+    public SemiPreciousGem(String symbol, int cost, int weight, int opacity, String color, String name) throws GemLogicException {
         super(cost, weight, opacity, color, name);
-        this.symbol = symbol;
+        if(symbol.isEmpty()){
+            throw new GemLogicException("Символ камня должен быть указан.");
+        } else{
+            this.symbol = symbol;
+        }
     }
 
     /**
@@ -36,23 +42,27 @@ public class SemiPreciousGem extends Gem {
 
     /**
      * @param symbol the symbol to set
+     * @throws by.skakun.gemstones.exception.GemLogicException
      */
-    public void setSymbol(String symbol) {
-        if (symbol != null) {
-            this.symbol = symbol;
+    public void setSymbol(String symbol) throws GemLogicException {
+        if (symbol.isEmpty()) {
+            throw new GemLogicException("Символ камня должен быть указан.");
         } else {
-            LOG.warn("Символ камня не может быть пустым.");
+            this.symbol = symbol;
         }
     }
 
     @Override
     public String toString() {
-        return super.toString() + "Символизирует: " + symbol;
+        return super.toString() + ". Символизирует: " + symbol;
     }
 
     @Override
     public boolean equals(Object obj) {
         if (!super.equals(obj)) {
+            return false;
+        }
+        if (this != obj) {
             return false;
         }
         final SemiPreciousGem other = (SemiPreciousGem) obj;

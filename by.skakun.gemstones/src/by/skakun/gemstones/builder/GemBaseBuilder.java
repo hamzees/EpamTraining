@@ -7,7 +7,7 @@ import by.skakun.gemstones.necklace.Necklace;
  *
  * @author skakun
  */
-public abstract class GemsBaseBuilder {
+public abstract class GemBaseBuilder {
 
     /**
      * Creates a new Necklace object.
