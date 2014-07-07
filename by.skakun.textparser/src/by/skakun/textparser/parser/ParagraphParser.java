@@ -1,32 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package by.skakun.textparser.parser;
 
-import by.skakun.textparser.entity.Text;
-import by.skakun.textparser.entity.TextPart;
+import by.skakun.textparser.entity.TextComposite;
+import by.skakun.textparser.entity.TextComponent;
+import by.skakun.textparser.entity.TypeOfText;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-/**
- *
- * @author apple
- */
-public class ParagraphParser implements IParser {
+public class ParagraphParser {
 
-    ArrayList<TextPart> paragraphs = new ArrayList<>();
+    public static final org.apache.log4j.Logger LOG = org.apache.log4j.Logger.getLogger(ParagraphParser.class);
 
-    public void parse(Text text) {
-        text.getContent().toString().split(System.getProperty("line.separator"));
-    }
-    Text text;
-
-    text.createNewParagraphsList (paragraphs.length);
-    for (String paragraph : paragraphs) {
-            if (paragraph.length() > 0) {
-            text.addPart(new Paragraph(paragraph));
+    public static TextComposite parseForSentences(String string, String sentRegex, String wordRegex, String punctRegex) {
+        ArrayList<TextComponent> sentences = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
+        Pattern sentencePattern = Pattern.compile(sentRegex,
+                Pattern.UNICODE_CHARACTER_CLASS);
+        Matcher sentenceMatcher = sentencePattern.matcher(string);
+        while (sentenceMatcher.find()) {
+            sentences.add(SentenceParser.parseForWords(sentenceMatcher.group(), wordRegex, punctRegex));
+            LOG.info("\t" + "Предложение" + ": " + sentenceMatcher.group());
         }
+        TextComposite paragraph = new TextComposite(sentences, TypeOfText.PARAGRAPH);
+        sentences.stream().forEach((tp) -> {
+            TextComposite tp1 = (TextComposite) tp;
+        });
+        return paragraph;
     }
-
 }
