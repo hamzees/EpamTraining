@@ -28,9 +28,9 @@ public class SentenceSorting {
     public static void sortSentencesByWordCount(TextComponent sentencesToSort) {
         TextComposite sentences = (TextComposite) sentencesToSort;
         Collections.sort(sentences.getElements(), (Object o1, Object o2) -> {
-            TextComposite tp1 = (TextComposite) o1;
-            TextComposite tp2 = (TextComposite) o2;
-            return (tp2.getContent().lastIndexOf(" ") - tp1.getContent().lastIndexOf(" "));
+            String [] s1= ((TextComposite) o1).toString.split(" ");
+            String [] s2= ((TextComposite) o2).toString.split(" ");
+            return (s2.length - s1.length);
         });
 
     }
