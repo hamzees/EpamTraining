@@ -27,33 +27,11 @@ public abstract class Gem {
      * @throws by.skakun.gemstones.exception.GemLogicException
      */
     public Gem(int cost, double weight, int opacity, String color, String name) throws GemLogicException {
-        if (cost <= 0) {
-            throw new GemLogicException("Цена камня не может быть меньше нуля");
-        } else {
-            this.cost = cost;
-        }
-        if (weight <= 0) {
-            throw new GemLogicException("Вес камня не может быть меньше нуля");
-        } else {
-            this.weight = weight;
-        }
-        if (opacity <= 0) {
-            throw new GemLogicException("Прозрачность камня не может быть меньше нуля");
-        } else {
-            this.opacity = opacity;
-        }
-
-        if (color.isEmpty()) {
-            throw new GemLogicException("Цвет камня должен быть указан");
-        } else {
-
-            this.color = color;
-        }
-        if (name.isEmpty()) {
-            throw new GemLogicException("Название камня должно быть указано");
-        } else {
-            this.name = name;
-        }
+        setCost(cost);
+        setWeight(weight);
+        setOpacity(opacity);
+        setColor(color);
+        setName(name);
     
 }
 
@@ -121,7 +99,7 @@ public Gem() {
      *
      */
     public void setColor(String color) throws GemLogicException {
-        if (color.isEmpty()) {
+        if (!color.isEmpty()) {
             this.color = color;
         } else {
             throw new GemLogicException("У камня не указан цвет.");
@@ -141,7 +119,7 @@ public Gem() {
      * @throws by.skakun.gemstones.exception.GemLogicException
      */
     public void setName(String name) throws GemLogicException {
-        if (name.isEmpty()) {
+        if (!name.isEmpty()) {
             this.name = name;
         } else {
             throw new GemLogicException("У камня не указано название.");
