@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<necklace
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://wwww.example.com/gem"
+    xsi:schemaLocation="http://www.example.com/gem gem.xsd" >
+    
+    <!--<necklace>   --> 
+    <realpreciousgem id="dhw42-8371042-NS">
+        <name>бриллиант</name>
+        <color>розовый</color>
+        <toughness>hard</toughness>
+        <cutMethod>круглый</cutMethod>
+        <cost>200</cost>
+        <weight>4</weight>
+        <opacity>1</opacity>
+        <fieldOrigin>Германия</fieldOrigin>
+    </realpreciousgem>
+    <artificialgem id="dfg11-9274812-KL">
+        <name>сапфир</name>
+        <color>синий</color>
+        <toughness>soft</toughness>
+        <cutMethod>капельная</cutMethod>
+        <cost>150</cost>
+        <weight>3</weight>
+        <opacity>2</opacity>
+        <age>5</age>
+    </artificialgem>
+    <semipreciousgem id="asf12-6392963-LL">
+        <name>опал</name>
+        <color>белый</color>
+        <cost>50</cost>
+        <weight>4</weight>
+        <opacity>1</opacity>
+        <symbol>сострадание</symbol>
+    </semipreciousgem>
+    <!--    </necklace>  -->
+</necklace>
