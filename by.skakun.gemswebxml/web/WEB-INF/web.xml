@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <display-name>GemstonesParsing</display-name>
+    <servlet>
+        <servlet-name>GemstonesServlet</servlet-name>
+        <servlet-class>by.skakun.gemswebxml.servlet.GemstonesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GemstonesServlet</servlet-name>
+        <url-pattern>/gemstonesparsing</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>/index.jsp</welcome-file>
+    </welcome-file-list>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.RuntimeException</exception-type>
+        <location>/error.jsp</location>
+    </error-page>
+</web-app>

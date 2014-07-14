@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http:www.example.com/necklace"
+        xmlns:tns="http:www.example.com/necklace"
+        elementFormDefault="qualified">
+    
+    <element name="gem" type="tns:Gem" abstract="true"></element>
+    <element name="semipreciousgem" type="tns:SemiPreciousGem" substitutionGroup="tns:gem"></element>
+    <element name="preciousgem" type="tns:PreciousGem" abstract="true" substitutionGroup="tns:gem"></element>
+    <element name="realpreciousgem" type="tns:RealPreciousGem" substitutionGroup="tns:preciousgem"></element>
+    <element name="artificialgem" type="tns:ArtificialGem" substitutionGroup="tns:preciousgem"></element>
+
+
+    <element name="necklace">
+        <complexType>
+            <sequence>
+                <element ref = "tns:gem" minOccurs = "2" maxOccurs = "unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    
+    <complexType name="Gem">
+        <sequence>            
+            <element name = "toughness">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="hard"/>
+                        <enumeration value="soft"/>
+                        <enumeration value="medium"/>
+                    </restriction>
+                </simpleType>
+            </element>   
+            <element name = "opacity" type = "positiveInteger" />
+            <element name = "weight" type = "positiveInteger" />
+            <element name = "cost" type = "positiveInteger" />
+            <element name = "name" type = "string"  />
+            <element name = "color" type = "string" />   
+        </sequence>
+        <attribute name = "id" use="required" >
+            <simpleType>
+                <restriction base="ID">
+                    <pattern value = "(^[a-z]{3}\d{2}-\d{7}-[A-Z]{2})" />
+                </restriction>
+            </simpleType>
+        </attribute>
+        
+    </complexType>
+   
+    <complexType name="SemiPreciousGem">
+        <complexContent>
+            <extension base="tns:Gem">
+                <sequence>
+                    <element name="symbol" type="string" />
+                </sequence>    
+            </extension>
+        </complexContent>
+    </complexType>
+    
+    <complexType name="PreciousGem">
+        <complexContent>
+            <extension base="tns:Gem">
+                <sequence>
+                    <element name="tougnhess" type="positiveInteger"/>
+                    <element name="cutMethod" type="string"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    
+    <complexType name="RealPreciousGem">
+        <complexContent>
+            <extension base="tns:PreciousGem">
+                <sequence>
+                    <element name="fieldOrigin" type="string"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    
+    <complexType name="ArtificialGem">
+        <complexContent>
+            <extension base="tns:PreciousGem">
+                <sequence minOccurs="1" maxOccurs="unbounded">
+                    <element name="age" type="positiveInteger"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    
+</schema>    
