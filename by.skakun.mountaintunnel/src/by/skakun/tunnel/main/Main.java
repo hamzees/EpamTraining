@@ -1,9 +1,8 @@
 package by.skakun.tunnel.main;
 
-import by.skakun.tunnel.entity.Railway;
 import by.skakun.tunnel.entity.Train;
-import by.skakun.tunnel.entity.Tunnel;
-import by.skakun.tunnel.thread.TrainParser;
+import by.skakun.tunnel.entity.TunnelPool;
+import by.skakun.tunnel.parser.TrainParser;
 import java.util.List;
 
 import org.apache.log4j.LogManager;
@@ -18,18 +17,19 @@ public class Main {
         new DOMConfigurator().doConfigure("src/properties/log4j.xml", LogManager.getLoggerRepository());
 
 
-        LOG.info("Начало движения поездов");
+        LOG.info("Начало движения поездов.");
 
-        Tunnel<Railway> tunnel = new Tunnel<Railway>();
+        TunnelPool<Train> tunnelPool = new TunnelPool<Train>();
         List<Train> trains = TrainParser.getData(
-                "src/resources/trains.xml", tunnel);
+                "src/resources/trains.xml", tunnelPool);
 
-        for (Train train : trains) {
+        trains.stream().forEach((train) -> {
             train.start();
-        }
+        });
+        
         for (Train train : trains) {
             train.join();
         } 
-        LOG.info("Конец движения поездов");
+        LOG.info("Конец движения поездов.");
     }
 }

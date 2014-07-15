@@ -1,42 +1,35 @@
 package by.skakun.tunnel.entity;
 
-import java.util.LinkedList;
-import java.util.concurrent.Semaphore;
-
+import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
 
+public class Tunnel {
 
-public class Tunnel<T> extends LinkedList<Railway> {
+    private int tunnelNum;
 
-	private static Logger LOG = Logger.getLogger(Tunnel.class);
-	private int railway;
-	private Semaphore semaphoreVee;
+    private static Logger LOG = Logger.getLogger(Tunnel.class);
 
-	public Semaphore getSemaphoreVee() {
-		return semaphoreVee;
-	}
+    public Tunnel(int tunnelNum) {
+        this.tunnelNum = tunnelNum;
+    }
 
-	public void setSemaphoreVee(Semaphore semaphoreVee) {
-		this.semaphoreVee = semaphoreVee;
-	}
+    public void throughTunnel(String trainName, int timeThroughTunnel) throws InterruptedException {
+        LOG.info("Поезд " + trainName + " к тоннелю №" + tunnelNum);
+    }
 
-	public Tunnel() {
-		railway = 2; //количество 
-		semaphoreVee = new Semaphore(railway);
-		for (int i = 0; i < railway; i++) {
-			this.add(new Railway(i + 1));
-		}
-	}
+    public void freeTunnel(String trainName, int timeThroughTunnel) throws InterruptedException {
+       Thread.sleep(timeThroughTunnel * 100);
 
-	public synchronized Railway getRailway() {
-		Railway railway = this.get(0);
-		this.remove(0);
-		return railway;
+        LOG.info("Поезд " + trainName + " освобождает тоннель #" + tunnelNum);
+    }
 
-	}
+    public int getTunnelNum() {
+        return tunnelNum;
+    }
 
-	public synchronized void setRailway(Railway railway) {
-		this.add(railway);
-	}
+    public void setTunnelNum(int tunnelNum) {
+        this.tunnelNum = tunnelNum;
+    }
 
+    
 }

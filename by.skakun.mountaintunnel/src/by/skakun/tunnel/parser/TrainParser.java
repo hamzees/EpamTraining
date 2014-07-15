@@ -1,8 +1,8 @@
-package by.skakun.tunnel.thread;
+package by.skakun.tunnel.parser;
 
 import by.skakun.tunnel.entity.Direction;
 import by.skakun.tunnel.entity.Train;
-import by.skakun.tunnel.entity.Tunnel;
+import by.skakun.tunnel.entity.TunnelPool;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,9 +19,10 @@ public class TrainParser {
 	private static Logger LOG = Logger.getLogger(TrainParser.class);
 	public static final String DATA = "data";
 
-	public static List<Train> getData(String dataFileName, final Tunnel tunnel) {
+	public static List<Train> getData(String dataFileName, final TunnelPool tunnel) {
 
 		final List<Train> trains = new ArrayList<Train>();
+               // final List<Train> trainsN = new ArrayList<Train>();
 
 
 		try {
@@ -35,6 +36,7 @@ public class TrainParser {
 				String id = "";
 				int direction = 0;
 				int time = 0;
+                                int tunnelNum = 0;
 
 				@Override
 				public void startElement(String uri, String localName,
@@ -86,6 +88,10 @@ public class TrainParser {
 						time = Integer.parseInt(new String(ch, start, length));
 						isTime = false;
 					}
+                                        if (isTunnel) {
+                                            tunnelNum = Integer.parseInt(new String(ch, start, length));
+                                            isTunnel = false;                                           
+                                        }
                                        
 				}
 

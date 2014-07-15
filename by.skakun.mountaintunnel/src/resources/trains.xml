@@ -10,63 +10,63 @@
         <id>K2</id>>
         <waitingTime>4</waitingTime>
         <direction>1</direction>
-                <tunnel>1</tunnel>
+        <tunnel>1</tunnel>
 
     </train>
     <train>
         <id>K3</id>>
         <waitingTime>8</waitingTime>
         <direction>1</direction>
-                <tunnel>1</tunnel>
+        <tunnel>1</tunnel>
 
     </train>
     <train>
         <id>K4</id>>
         <waitingTime>10</waitingTime>
         <direction>0</direction>
-                <tunnel>1</tunnel>
+        <tunnel>1</tunnel>
 
     </train>
     <train>
         <id>K5</id>>
         <waitingTime>5</waitingTime>
         <direction>0</direction>
-                <tunnel>1</tunnel>
+        <tunnel>1</tunnel>
 
     </train>
-       <train>
+    <train>
         <id>M1</id>>
         <waitingTime>3</waitingTime>
         <direction>0</direction>
-                <tunnel>1</tunnel>
+        <tunnel>2</tunnel>
 
     </train>
     <train>
         <id>M2</id>>
         <waitingTime>4</waitingTime>
         <direction>1</direction>
-                <tunnel>1</tunnel>
+        <tunnel>2</tunnel>
 
     </train>
     <train>
         <id>M3</id>>
         <waitingTime>8</waitingTime>
         <direction>1</direction>
-                <tunnel>1</tunnel>
+        <tunnel>2</tunnel>
 
     </train>
     <train>
         <id>M4</id>>
         <waitingTime>10</waitingTime>
         <direction>0</direction>
-                <tunnel>1</tunnel>
+        <tunnel>2</tunnel>
 
     </train>
     <train>
         <id>M5</id>>
         <waitingTime>5</waitingTime>
         <direction>0</direction>
-                <tunnel>1</tunnel>
+        <tunnel>2</tunnel>
 
     </train>
 </trains>
