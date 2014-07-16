@@ -33,4 +33,116 @@
         <opacity>1</opacity>
         <symbol>сострадание</symbol>
     </semipreciousgem>
+    <realpreciousgem id="dhw42-8371042-NS">
+        <name>бриллиант</name>
+        <color>розовый</color>
+        <toughness>hard</toughness>
+        <cutMethod>круглый</cutMethod>
+        <cost>200</cost>
+        <weight>4</weight>
+        <opacity>1</opacity>
+        <fieldOrigin>Германия</fieldOrigin>
+    </realpreciousgem>
+    <artificialgem id="dfg11-9274812-KP">
+        <name>сапфир</name>
+        <color>синий</color>
+        <toughness>soft</toughness>
+        <cutMethod>капельная</cutMethod>
+        <cost>150</cost>
+        <weight>3</weight>
+        <opacity>2</opacity>
+        <age>5</age>
+    </artificialgem>
+    <semipreciousgem id="asf12-6392963-BL">
+        <name>опал</name>
+        <color>белый</color>
+        <cost>50</cost>
+        <weight>4</weight>
+        <opacity>1</opacity>
+        <symbol>сострадание</symbol>
+    </semipreciousgem>
+    <realpreciousgem id="dhw42-8371042-XS">
+        <name>бриллиант</name>
+        <color>розовый</color>
+        <toughness>hard</toughness>
+        <cutMethod>круглый</cutMethod>
+        <cost>200</cost>
+        <weight>4</weight>
+        <opacity>1</opacity>
+        <fieldOrigin>Германия</fieldOrigin>
+    </realpreciousgem>
+    <artificialgem id="dfg11-9274812-KP">
+        <name>сапфир</name>
+        <color>синий</color>
+        <toughness>soft</toughness>
+        <cutMethod>капельная</cutMethod>
+        <cost>150</cost>
+        <weight>3</weight>
+        <opacity>2</opacity>
+        <age>5</age>
+    </artificialgem>
+    <semipreciousgem id="asf12-6392963-LC">
+        <name>опал</name>
+        <color>белый</color>
+        <cost>50</cost>
+        <weight>4</weight>
+        <opacity>1</opacity>
+        <symbol>сострадание</symbol>
+    </semipreciousgem>
+    <realpreciousgem id="dhw42-8371042-OS">
+        <name>бриллиант</name>
+        <color>розовый</color>
+        <toughness>hard</toughness>
+        <cutMethod>круглый</cutMethod>
+        <cost>200</cost>
+        <weight>4</weight>
+        <opacity>1</opacity>
+        <fieldOrigin>Германия</fieldOrigin>
+    </realpreciousgem>
+    <artificialgem id="dfg11-9274812-KA">
+        <name>сапфир</name>
+        <color>синий</color>
+        <toughness>soft</toughness>
+        <cutMethod>капельная</cutMethod>
+        <cost>250</cost>
+        <weight>3</weight>
+        <opacity>2</opacity>
+        <age>5</age>
+    </artificialgem>
+    <semipreciousgem id="asf12-6392963-ML">
+        <name>опал</name>
+        <color>белый</color>
+        <cost>150</cost>
+        <weight>4</weight>
+        <opacity>1</opacity>
+        <symbol>сострадание</symbol>
+    </semipreciousgem>
+    <realpreciousgem id="dhw42-8371042-NK">
+        <name>бриллиант</name>
+        <color>розовый</color>
+        <toughness>hard</toughness>
+        <cutMethod>круглый</cutMethod>
+        <cost>300</cost>
+        <weight>4</weight>
+        <opacity>1</opacity>
+        <fieldOrigin>Германия</fieldOrigin>
+    </realpreciousgem>
+    <artificialgem id="dfg11-9274812-KM">
+        <name>сапфир</name>
+        <color>синий</color>
+        <toughness>soft</toughness>
+        <cutMethod>капельная</cutMethod>
+        <cost>450</cost>
+        <weight>3</weight>
+        <opacity>2</opacity>
+        <age>5</age>
+    </artificialgem>
+    <semipreciousgem id="asf12-6392963-LS">
+        <name>опал</name>
+        <color>белый</color>
+        <cost>120</cost>
+        <weight>4</weight>
+        <opacity>1</opacity>
+        <symbol>сострадание</symbol>
+    </semipreciousgem>
 </necklace>

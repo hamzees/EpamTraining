@@ -53,7 +53,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <body>\n");
       out.write("        ");
       if (true) {
-        _jspx_page_context.forward("/login.jsp");
+        _jspx_page_context.forward("/jsp/login.jsp");
         return;
       }
       out.write("\n");

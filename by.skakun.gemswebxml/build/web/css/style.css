@@ -1,0 +1,132 @@
+input[type=submit] {
+    background: #e3e3e3;
+    border: 1px solid #bbb;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 0 1px 1px #f6f6f6;
+    -moz-box-shadow: inset 0 0 1px 1px #f6f6f6;
+    -ms-box-shadow: inset 0 0 1px 1px #f6f6f6;
+    -o-box-shadow: inset 0 0 1px 1px #f6f6f6;
+    box-shadow: inset 0 0 1px 1px #f6f6f6;
+    color: #333;
+    font: bold 12px "helvetica neue", helvetica, arial, sans-serif;
+    line-height: 1;
+    padding: 8px 0 9px;
+    text-align: center;
+    text-shadow: 0 1px 0 #fff;
+    width: 170px; }
+button.minimal:hover {
+    background: #d9d9d9;
+    -webkit-box-shadow: inset 0 0 1px 1px #eaeaea;
+    -moz-box-shadow: inset 0 0 1px 1px #eaeaea;
+    -ms-box-shadow: inset 0 0 1px 1px #eaeaea;
+    -o-box-shadow: inset 0 0 1px 1px #eaeaea;
+    box-shadow: inset 0 0 1px 1px #eaeaea;
+    color: #222;
+    cursor: pointer; }
+button.minimal:active {
+    background: #d0d0d0;
+    -webkit-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    -moz-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    -ms-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    -o-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    box-shadow: inset 0 0 1px 1px #e3e3e3;
+    color: #000; }
+
+html {
+    height: 99%;
+}
+body{
+    height:99%;
+}
+.header,.menu_content,.footer {
+    width: 100%;
+}
+.footer {
+    text-align: center;
+    height:5%;
+    top: 96%;
+}
+
+
+.results table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    position: relative;
+    
+    width:50%;
+    height:100%;
+    margin:0px;padding:0px;
+    border: 1px solid #bbb;
+
+}.results tr:last-child td:last-child {
+    -moz-border-radius-bottomright:0px;
+    -webkit-border-bottom-right-radius:0px;
+    border-bottom-right-radius:0px;
+}
+.results table tr:first-child td:first-child {
+    -moz-border-radius-topleft:0px;
+    -webkit-border-top-left-radius:0px;
+    border-top-left-radius:0px;
+}
+.results table tr:first-child td:last-child {
+    -moz-border-radius-topright:0px;
+    -webkit-border-top-right-radius:0px;
+    border-top-right-radius:0px;
+}.results tr:last-child td:first-child{
+    -moz-border-radius-bottomleft:0px;
+    -webkit-border-bottom-left-radius:0px;
+    border-bottom-left-radius:0px;
+}.results tr:hover td{
+
+}
+.results tr:nth-child(odd){ background-color:#b2b2b2; }
+.results tr:nth-child(even)    { background-color:#ffffff; }.results td{
+    vertical-align:middle;
+
+
+    border:1px solid #000000;
+    border-width:0px 1px 1px 0px;
+    text-align:left;
+    padding:14px;
+    font-size:10px;
+    font-family:Arial;
+    font-weight:normal;
+    color:#000000;
+}.results tr:last-child td{
+    border-width:0px 1px 0px 0px;
+}.results tr td:last-child{
+    border-width:0px 0px 1px 0px;
+}.results tr:last-child td:last-child{
+    border-width:0px 0px 0px 0px;
+}
+.results tr:first-child td{
+    background:-o-linear-gradient(bottom, #b2b2b2 5%, #4c4c4c 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #b2b2b2), color-stop(1, #4c4c4c) );
+    background:-moz-linear-gradient( center top, #b2b2b2 5%, #4c4c4c 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#b2b2b2", endColorstr="#4c4c4c");	background: -o-linear-gradient(top,#b2b2b2,4c4c4c);
+
+    background-color:#b2b2b2;
+    border:0px solid #000000;
+    text-align:center;
+    border-width:0px 0px 1px 1px;
+    font-size:14px;
+    font-family:Arial;
+    font-weight:bold;
+    color:#ffffff;
+}
+.results tr:first-child:hover td{
+    background:-o-linear-gradient(bottom, #b2b2b2 5%, #4c4c4c 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #b2b2b2), color-stop(1, #4c4c4c) );
+    background:-moz-linear-gradient( center top, #b2b2b2 5%, #4c4c4c 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#b2b2b2", endColorstr="#4c4c4c");	background: -o-linear-gradient(top,#b2b2b2,4c4c4c);
+
+    background-color:#b2b2b2;
+}
+.results tr:first-child td:first-child{
+    border-width:0px 0px 1px 0px;
+}
+.results tr:first-child td:last-child{
+    border-width:0px 0px 1px 1px;
+}
