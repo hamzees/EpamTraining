@@ -33,8 +33,8 @@ public class TunnelPool<T> extends ArrayList<Tunnel> {
                  LOG.info("Превышено время ожидания поезда №" + name + ". Пробуем другой тоннель.");
                   this.getSemaphore().tryAcquire();
                  Tunnel tunnel = this.getTunnel(300, name);
-                 this.add(tunnel);
-                 this.remove(0);
+                 /*this.add(tunnel);
+                 this.remove(0); */ 
                  return tunnel; 
             }
         } catch (InterruptedException ex) {
