@@ -1,9 +1,3 @@
-<%-- 
-    Document   : main
-    Created on : 13.07.2014, 19:45:37
-    Author     : apple
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -15,6 +9,7 @@
         <link rel="stylesheet" href="css/style.css" type="text/css">
     </head>
     <body>
+    <c:import url="\common\header.jspf" />
     <center>   <h2>Здравствуйте, ${user} </h2>
         Выберите тип действия:
         <form name = "sax" action="gemstonesparsing" method="POST">
@@ -49,9 +44,16 @@
             ${wrongAction}
             ${nullPage}
         </form>
-
+        <form name = "logout" action="gemstonesparsing" method="POST">
+            <input type ="hidden" name="command" value="LOGOUT" />
+            <input type ="submit" name="button" value="Выйти." /> 
+            <br/>
+            ${errorLoginPassMessage}
+            ${wrongAction}
+            ${nullPage}
+        </form>
     </center>
-            <c:import url="\common\footer.jsp" />
+    <c:import url="\common\footer.jspf" />
 
-    </body>
+</body>
 </html>

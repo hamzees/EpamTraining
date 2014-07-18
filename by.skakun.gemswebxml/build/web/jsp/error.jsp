@@ -1,10 +1,5 @@
-<%-- 
-    Document   : error
-    Created on : 14.07.2014, 11:46:15
-    Author     : apple
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page language = "java" contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +7,7 @@
         <title>Error Page</title>
     </head>
     <body>
+       <c:import url="\common\header.jspf" />
         Request from ${pageContext.errorData.requestURI} is failed
         <br/>
         Servlet name or type: ${pageContext.errorData.servletName}
@@ -19,6 +15,7 @@
         Status code : ${pageContext.errorData.statusCode}
         <br/>
         Exception : ${pageContext.errorData.throwable}
-        
+                    <c:import url="\common\footer.jspf" />
+
     </body>
 </html>

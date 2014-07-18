@@ -11,6 +11,8 @@
 
     </head>
     <body>
+        <c:import url="\common\header.jspf" />
+
         <h3>Результат парсинга: ${res} </h3>        
     <center>
         <div class = "results"><table >
@@ -24,7 +26,7 @@
         </div>
 
     </center>
-    <c:import url="\common\footer.jsp" />
+    <c:import url="\common\footer.jspf" />
 
 </body>
 </html>

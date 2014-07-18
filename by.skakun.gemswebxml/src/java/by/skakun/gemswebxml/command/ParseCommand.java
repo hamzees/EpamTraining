@@ -11,10 +11,6 @@ import by.skakun.gemswebxml.xmlparsers.NecklaceBuilderFactory;
 import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
 
-/**
- *
- * @author apple
- */
 public class ParseCommand implements ActionCommand {
 
     private String command;
@@ -25,21 +21,26 @@ public class ParseCommand implements ActionCommand {
         this.command = command;
     }
 
+     /**
+     *
+     * @param request
+     * @return content for page result/or redirects to login page with error message
+     */
     @Override
     public String execute(HttpServletRequest request) {
-        String page = null;
-        Set<Gem> s3 = null;
+        String page;
+        Set<Gem> gemset;
         NecklaceBuilderFactory nFactory = new NecklaceBuilderFactory();
         AbstractNecklaceBuilder builder = nFactory.createNecklaceBuilder(command.toLowerCase());
         if (command.toUpperCase().equals("DOM")) {
-            s3 = builder.buildSetGems(PATH_D);
+            gemset = builder.buildSetGems(PATH_D);
         } else {
-            s3 = builder.buildSetGems(PATH_S);
+            gemset = builder.buildSetGems(PATH_S);
         }
-        if (!s3.isEmpty()) {
-            request.setAttribute("res", (command.toUpperCase() + "-парсинг выполнен.<br/><hr/>")/* + ActionCommand.collectNecklace(s3)*/);
+        if (!gemset.isEmpty()) {
+            request.setAttribute("res", (command.toUpperCase() + "-парсинг выполнен.<br/><hr/>")/* + ActionCommand.collectNecklace(gemset)*/);
             page = ConfigurationManager.getProperty("path.page.result");
-            request.setAttribute("lst", s3);
+            request.setAttribute("lst", gemset);
             request.setAttribute("tablebegin", "<tr>\n"
                     + "<th>Информация об ожерелье:</th>\n"
                     + "</tr>");

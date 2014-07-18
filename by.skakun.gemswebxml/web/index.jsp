@@ -1,9 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : 13.07.2014, 19:45:37
-    Author     : apple
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
