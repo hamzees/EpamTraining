@@ -1,6 +1,6 @@
 package by.skakun.tunnel.entity;
 
-public enum Direction {
+public enum DirectionEnum {
 	SOUTH,
 	NORTH;
 }
